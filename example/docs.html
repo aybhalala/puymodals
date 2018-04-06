@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/example/" target="_blank">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Aditya's PUYMODALS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="http://pateladitya.com">Aditya Patel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="puymodals.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="docs.html">Documentation <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-primary text-center">Documentation</h1>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>General Attributes</h5>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Possible Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>type</td>
+                  <td>Currently Supported: video and iframe. If not set defaults to general</td>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>Title of the Modal</td>
+                </tr>
+                <tr>
+                  <td>heading</td>
+                  <td>If defined, appears as a H2 tag in the modal body. This can include HTML.</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>Is placed in the body inside a paragraph tag. This can include HTML.</td>
+                </tr>
+                <tr>
+                  <td>loadPage</td>
+                  <td>Takes a document location and loads it in the body. When using this, heading and message attributes are ignored</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Sizing Parameters</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Any attribute not used will be ignored (unless stated as default).</strong></p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Possible Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>width of the modal-dialog</td>
+                </tr>
+                <tr>
+                  <td>maxWidth</td>
+                  <td>max-width of modal-dialog</td>
+                </tr>
+                <tr>
+                  <td>height</td>
+                  <td>height of the modal-dialog</td>
+                </tr>
+                <tr>
+                  <td>maxHeight</td>
+                  <td>max-height of modal-dialog</td>
+                </tr>
+                <tr>
+                  <td>overflowY</td>
+                  <td>any type of overflow css value (e.g. 'scroll'). <span class="text-danger">Defaults to 'auto'</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Video Popups</h5>
+          </div>
+          <div class="card-body">
+            <p class="text-danger"><strong>Both these parameters are required</strong></p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Possible Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>videoSource</td>
+                  <td>local, youtube, vimeo</td>
+                </tr>
+                <tr>
+                  <td>embedTag</td>
+                  <td>File path (e.g. '/video/example.mp4') or Youtube's/Vimeo's video ID (e.g. 'YE7VzlLtp-4' for Youtube or '1084537' for vimeo)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+  </div>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../js/puymodals.js" charset="utf-8"></script>
+</body>
+
+</html>
