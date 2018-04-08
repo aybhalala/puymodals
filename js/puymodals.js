@@ -55,7 +55,7 @@ function getNumbers(inputString) {
     return inputString;
   } else return inputString;
 }
-
+//*******************Main function starts here***********************//
 function puyModal(options) {
   removeDisplayedModal();
   var that = {};
@@ -174,14 +174,13 @@ function puyModal(options) {
     that.style += '</style>';
   }
 
-
-  //Start of html
+  //The output starts here
   html = '<div id="puyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="message-modal" aria-hidden="true">';
   html += that.style;
   html += '<div class="modal-dialog">';
   html += '<div class="modal-content" style="display: block;">';
   html += '<div class="modal-header modal-title">';
-  html += '<h4>' + that.title + '</h4>';
+  html += '<p class="h5">' + that.title + '</p>';
   html += '<a class="close" data-dismiss="modal">X</a>';
   html += '</div>';
   if (that.type == 'general') {
@@ -212,11 +211,40 @@ function puyModal(options) {
   $('#puyModal').on('hidden.bs.modal', function(e) {
     $(this).remove();
   });
-
 }
+//*******************Main function ends here***********************//
 
+
+//******************Additional Supportive functions****************//
+
+//simple function to hide modals if displayed
 function hideModals() {
   if ($('.modal').length > 0) {
     $('.modal').modal('hide');
   }
 }
+
+//This function binds a video popup to everything that has classname puyVideo
+$('.puyVideo').on('click', function() {
+  var videoPopup = {};
+  if (typeof($(this).attr('title')) == 'undefined') {
+    videoPopup.title = 'Video';
+  } else {
+    videoPopup.title = $(this).attr('title');
+  }
+  if ((typeof($(this).attr('href')) != 'undefined') || (typeof($(this).attr('data-href')) != 'undefined')) {
+    videoPopup.embedTag = (typeof($(this).attr('href')) != 'undefined') ? $(this).attr('href') : $(this).attr('data-href');
+  }
+  if (typeof($(this).attr('data-videoSource')) != 'undefined') {
+    videoPopup.videoSource = $(this).attr('data-videoSource');
+  }
+  if (videoPopup.embedTag && videoPopup.videoSource) {
+    puyModal({
+      title: videoPopup.title,
+      type: 'video',
+      videoSource: videoPopup.videoSource,
+      embedTag: videoPopup.embedTag
+    });
+    return false; //preventing default action of anchors
+  }
+});

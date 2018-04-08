@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <base href="/example/" target="_blank">
+  <base href="/puymodals/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="puymodals.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="docs.html">Documentation <span class="sr-only">(current)</span></a>
@@ -33,8 +33,9 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <h1 class="text-primary text-center">Documentation</h1>
+      <div class="col-sm-12 text-center">
+        <h1 class="text-primary">Documentation</h1>
+        <p class="puy-head"><strong>Example:</strong> puyModal({title:'Test Title',heading:'Heading',message:'&lt;p&gt;This is sample message.&lt;/p&gt;'})</p>
       </div>
     </div>
     <div class="row my-3">
@@ -150,7 +151,41 @@
         </div>
       </div>
     </div>
-   
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Video Popups using class .puyVideo and element attributes</h5>
+          </div>
+          <div class="card-body">
+            <p class="text-danger"><strong>data-videoSource and data-href/href parameters are required</strong></p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Possible Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-videoSource</td>
+                  <td>local, youtube, vimeo</td>
+                </tr>
+                <tr>
+                  <td>data-href/href</td>
+                  <td>File path (e.g. '/video/example.mp4') or Youtube's/Vimeo's video ID (e.g. 'YE7VzlLtp-4' for Youtube or '1084537' for vimeo)</td>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>Title of the popup</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 
@@ -158,7 +193,7 @@
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="../js/puymodals.js" charset="utf-8"></script>
+  <script src="js/puymodals.js" charset="utf-8"></script>
 </body>
 
 </html>
