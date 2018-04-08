@@ -59,6 +59,48 @@
       <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
+            <h5>Modal with heading and message and icon</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Initialization code</strong></p>
+            <p class="card-text"><code data-lang="html">puyModal({title:'Test Title',heading:'Heading',message:'This is sample message.',icon: 'fab fa-js-square fa-3x'})</code></p>
+            <p>Most of the attributes can be HTML content.</p>
+            <button type="button" class="btn btn-primary" onclick="puyModal({title:'Test Title',heading:'Heading',message:'This is sample message.',icon: 'fab fa-js-square fa-3x'})">Click to See!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Showing/Hiding Header and Footer of Modal</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Different Possible combinations</strong></p>
+            <div class="border border-info p-3 m-1">
+              <p class="card-text"><code data-lang="html">puyModal({title:'Test Title',heading:'Heading',message:'&lt;p&gt;This is sample message.&lt;/p&gt;,showHeader: false'})</code></p>
+              <p>Hiding the header.</p>
+              <button type="button" class="btn btn-primary" onclick="puyModal({title:'Test Title',heading:'Heading',message:'<p>This is sample message.</p>',showHeader: false})">Click to See!</button>
+            </div>
+            <div class="border border-info p-3 m-1">
+              <p class="card-text mt-3"><code data-lang="html">puyModal({title:'Test Title',heading:'Heading',message:'&lt;p&gt;This is sample message.&lt;/p&gt;,showFooter: true'})</code></p>
+              <p>Showing the footer.</p>
+              <button type="button" class="btn btn-primary" onclick="puyModal({title:'Test Title',heading:'Heading',message:'<p>This is sample message.</p>',showFooter: true})">Click to See!</button>
+            </div>
+            <div class="border border-info p-3 m-1">
+              <p class="card-text mt-3"><code data-lang="html">puyModal({title:'Test Title',heading:'Heading',message:'&lt;p&gt;This is sample message.&lt;/p&gt;,showHeader: false, showFooter: true'})</code></p>
+              <p>Hiding the header and showing the footer.</p>
+              <button type="button" class="btn btn-primary" onclick="puyModal({title:'Test Title',heading:'Heading',message:'<p>This is sample message.</p>',showHeader: false, showFooter: true})">Click to See!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
             <h5>Load a page using jQuery's load function</h5>
           </div>
           <div class="card-body">

@@ -69,7 +69,18 @@ function puyModal(options) {
   if (typeof(options.title) != 'undefined') {
     that.title = options.title;
   }
-
+  that.showHeader = true;
+  if (typeof(options.showHeader) != 'undefined') {
+    that.showHeader = options.showHeader;
+  }
+  that.showFooter = false;
+  if (typeof(options.showFooter) != 'undefined') {
+    that.showFooter = options.showFooter;
+  }
+  that.icon = false;
+  if (typeof(options.icon) != 'undefined') {
+    that.icon = options.icon;
+  }
   that.heading = false;
   if (typeof(options.heading) != 'undefined') {
     that.heading = options.heading;
@@ -123,7 +134,6 @@ function puyModal(options) {
     that.hasStyles = true;
     that.overflowY = options.overflowY;
   }
-
 
   //Video Parameters
   that.videoSource = false;
@@ -179,19 +189,26 @@ function puyModal(options) {
   html += that.style;
   html += '<div class="modal-dialog">';
   html += '<div class="modal-content" style="display: block;">';
-  html += '<div class="modal-header modal-title">';
-  html += '<p class="h5">' + that.title + '</p>';
-  html += '<a class="close" data-dismiss="modal">X</a>';
-  html += '</div>';
+  if (that.showHeader) {
+    html += '<div class="modal-header modal-title">';
+    html += '<p class="h5">' + that.title + '</p>';
+    html += '<a class="close" data-dismiss="modal">X</a>';
+    html += '</div>';
+  }
   if (that.type == 'general') {
     html += '<div class="modal-body puyModalBody">';
     if (that.loadPage) {
       html += '<p class="modal-message text-center">Please wait while the content is being loaded...</p>';
     } else {
-      if (that.heading) {
-        html += '<h2 class="modal-heading text-center">' + that.heading + '</h2>';
+      if (that.icon) {
+        html += '<div class="text-center">'
+        html += '<i class="' + that.icon + '"></i>';
+        html += '</div>';
       }
-      html += '<p class="modal-message text-center">' + that.message + '</p>';
+      if (that.heading) {
+        html += '<h2 class="modal-heading text-center puy-modal-heading">' + that.heading + '</h2>';
+      }
+      html += '<div class="modal-message">' + that.message + '</div>';
     }
   } else if (that.type == 'video') {
     html += that.videoPayload;
@@ -200,6 +217,11 @@ function puyModal(options) {
     html += '<iframe src="' + that.iframe + '" ' + getIframeParams(that.iframeWidth, that.iframeHeight) + '>';
   }
   html += '</div>';
+  if (that.showFooter) {
+    html += '<div class="modal-footer puyModalFooter">';
+    html += '<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>';
+    html += '</div>';
+  }
   html += '</div>';
   html += '</div>';
   html += '</div>';
